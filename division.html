@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .formFill{
+            width: 40%;
+            margin: auto;
+            margin-top: 50px;
+            padding: 40px;
+            background: lightblue;
+            font-family: calibri;
+           
+        }
+
+        .formFill ul li{
+            list-style: none;
+            padding: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .formFill input{
+            padding: 10px;
+            border: none;
+        }
+
+        .subBtn{
+            border: none;
+            background-color: darkslategray;
+            padding: 5px;
+        }
+
+        .btn:hover{
+            background-color: black;
+        }
+
+        .formFill a{
+            padding-left: 30px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .answer{
+            padding: 20px;
+            text-align: center;
+        }
+
+        .firstnum{
+            margin-left: 25px;
+        }
+
+        .secondnum{
+            margin-left: 10px;
+        }
+
+        .logout{
+            padding:0px;
+            text-align: center;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="formFill">
+        <form>
+            <a href="ass.html"><img src="left-arrow.png" width="2%">Back</a>
+            <ul>
+                <li>
+                    <label>First number <input type="text" class="firstnum" placeholder="Enter first digit"></label>
+                </li>
+                <li>
+                    <label>Second number<input type="text" class="secondnum" placeholder="Enter second digit"></label>
+                </li>
+                <li>
+                    <button type="button" class="subBtn">Divide</button>
+                </li>
+            </ul>
+        </form>
+        <p class="answer"></p>
+        <a href="login.html" class="logout">Log out</a>
+    </div>
+
+    <script>
+        var button = document.querySelector('.subBtn');
+        function divide(){
+            var firstnum = document.querySelector('.firstnum').value;
+            var secondnum = document.querySelector('.secondnum').value;
+            var answer = document.querySelector('.answer');
+            var result = parseInt(firstnum) / parseInt(secondnum);
+            answer.innerHTML = 'the answer is ' + result;
+        }
+        button.onclick = divide;
+    </script>
+</body>
+</html>

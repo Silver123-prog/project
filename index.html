@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .formFill{
+            width: 40%;
+            margin: auto;
+            margin-top: 50px;
+            padding: 40px;
+            background: teal;
+            color: orchid;
+            font-family: calibri;
+        }
+
+        .formFill li{
+            margin: 10px 0px;
+            list-style: none;
+        }
+
+        .formFill a{
+            margin: 10px 0px;
+            color: white;
+            list-style: none;
+            width: 100%;
+            height: 30px;
+            font-family: calibri;
+            font-size: 15px
+        }
+
+        .formFill li input, .formFill li button{
+            width: 100%;
+            height: 35px;
+            font-family: calibri;
+            font-size: 20px
+        }
+
+        .formFill li button{
+            background: black;
+            border: none;
+            color: white;
+            text-align: center;
+        }
+
+        .formFill h2{
+            color: white;
+            font-family: calibri;
+            text-align: center;
+        }
+
+        .clspara{
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="formFill">
+        <a href="index.html">Home</a>
+        <a href="page.html">Page</a>
+        <h2>Name Checker</h2>
+        <form>
+            <ul>
+                <li>
+                    <input type="text" class="name" placeholder="Enter Name">
+                </li>
+                <li>
+                    <button type="button" class="subBtn">Submit</button>
+                </li>
+            </ul>
+        </form>
+        <p class="clspara"></p>
+    </div>
+
+
+    <script type="text/javascript">
+        var subBtn = document.querySelector('.subBtn')
+
+        function namecheck(){
+            var given = ["Mike", "Dan", "Henry"];
+            var name = document.querySelector('.name');
+            var clspara = document.querySelector('.clspara')
+
+            for(var m = 0; m < given.length; m=m+1){
+               if(name.value.toLowerCase() == given[m].toLowerCase()){
+                   var say = "Record retreved successfully";
+                   location.href = "welcome.html";
+                   break;
+               }else{
+                   var say = "Could not find name";
+               }
+            }
+
+            clspara.innerHTML = say;
+        }
+
+        subBtn.onclick = namecheck;
+       
+    </script>
+</body>
+</html>

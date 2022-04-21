@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 40%;
+            margin: auto;
+            margin-top: 50px;
+            padding: 40px;
+            background-color: teal;
+            font-family: calibri;
+            text-align: center;
+        }
+        li{
+            list-style: none;
+        }
+
+        input{
+            padding: 10px;
+            border: none;
+            margin: 10px;
+            /* padding: ; */
+        }
+
+        .subBtn{
+            border: none;
+            background-color: darkslategray;
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }
+
+        .subBtn:hover{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>User Login</h1>
+        <form action="">
+            <ul>
+                <li>
+                    <label>Username <input type="username" class="name" placeholder="Enter Username"></label>
+                </li>
+                <li>
+                    <label>Password <input type="password" class="word" placeholder="Enter Password"></label>
+                </li>
+                <li>
+                    <button type="button" class="subBtn">Log in</button>
+                </li>
+            </ul>
+        </form>
+        <p class="display"></p>
+    </div>
+
+    <script type="text/javascript">
+        var button = document.querySelector(".subBtn");
+        function Login(){
+            var username = document.querySelector('.name').value;
+            var password = document.querySelector('.word').value;
+            var display = document.querySelector('.display');
+            var users = [
+                {
+                    name: 'mico',
+                    password: 1234
+                },
+                {
+                    name: 'silver',
+                    password: 2244
+                },
+                {
+                    name: 'mikano',
+                    password: 16318634
+                },
+                {
+                    name: 'kola',
+                    password: 1234
+                },
+                {
+                    name: 'ayodeji',
+                    password: 1222
+                },
+                {
+                    name: 'marvelous',
+                    password: 2222
+                },
+                {
+                    name: 'dan',
+                    password: 1234
+                }
+            ];
+            for (i = 0; i < users.length; i++)
+                if(users[i].name == username && users[i].password == password){
+                    var say = 'loged in';
+                    location.href='ass.html';
+                    break;
+                }
+                else if(users[i].name == username && users[i].password !== password){
+                    var say = 'wrong password';
+                    break;
+                }
+                else if (username == 0|| password == 0){
+                    var say = 'fill up the field'
+                }
+                else if (users[i].name !== username) {
+                    var say = 'invalid name'
+                }
+                display.innerHTML = say;
+        }
+        button.onclick = Login;
+    </script>
+</body>
+</html>
